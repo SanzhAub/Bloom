@@ -1,0 +1,30 @@
+<div class="products-page">
+<!--  <h1 class="products-page-name">-->
+<!--    <span class="products-page-name-back" [routerLink]="['/', 'categories']">Categories</span>-->
+<!--    <span *ngIf="category"> > {{category.name}}</span>-->
+<!--  </h1>-->
+
+  <div class="products-main-page">
+    <div class="products-categories">
+      <app-categories></app-categories>
+    </div>
+    <div class="products-products-block">
+      <div class="products-products">
+        <div *ngFor="let product of products" class="products-product">
+          <h1 class="products-product-name" [routerLink]="['/', 'products', product.id]">{{product.name}}</h1>
+          <div class="products-product-image">
+            <app-product-image [images]="product.images"></app-product-image>
+          </div>
+          <h1 class="products-product-price">Цена: {{product.price}}тг</h1>
+          <div *ngIf="product.in_stock" class="products-product-availability products-product-quantity-cart">
+            <input type="number" min="1" max="99" class="products-product-count" [(ngModel)]="product.quantity">
+            <button class="products-product-cart-btn" (click)="toCart(product)">Добавить в корзину</button>
+          </div>
+          <div *ngIf="!product.in_stock" class="products-product-availability">
+            Нет в наличии
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

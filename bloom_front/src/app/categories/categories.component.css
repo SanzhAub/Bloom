@@ -1,0 +1,18 @@
+.categories-page{
+  background: #F6B4B4;
+  font-size: 15px;
+  padding: 10px;
+  color: white;
+}
+.categories-page-name{
+  text-align: center;
+}
+.categories-categories{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.categories-category-name{
+  margin-top: 5px;
+  cursor: pointer;
+}

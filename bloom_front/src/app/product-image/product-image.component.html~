@@ -1,0 +1,6 @@
+<div class="image-box">
+  <img src="{{images[index].src}}" class="image-image" *ngIf="images.length">
+  <div *ngIf="images.length" class="image-left image-btn" (click)="next(-1)"></div>
+  <div *ngIf="images.length" class="image-right image-btn" (click)="next(1)"></div>
+  <img *ngIf="!images.length" src="assets/images/no-img.png" class="image-image">
+</div>

@@ -1,0 +1,34 @@
+<div class="cart-page">
+  <h1 class="cart-page-name"><span *ngIf="!cart.items.length">Корзина пуста, добавьте букеты</span></h1>
+  <div *ngIf="cart.items.length">
+    <table class="cart-table">
+        <tr>
+          <th></th>
+          <th>Название</th>
+          <th>Цена</th>
+          <th>Количество</th>
+          <th>Общая цена</th>
+        </tr>
+        <tr *ngFor="let item of cart.items">
+          <td class="cart-image">
+            <div class="cart-product-image">
+              <app-product-image [images]="item.product.images"></app-product-image>
+            </div>
+          </td>
+          <td>{{item.product.name}}</td>
+          <td>{{item.product.price}}тг</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.total_price}}тг</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Сумма</td>
+          <td></td>
+          <td></td>
+          <td>{{cart.total_price}}тг</td>
+        </tr>
+    </table>
+    <button class="order-btn" (click)="order()">Заказать</button>
+  </div>
+</div>
+
